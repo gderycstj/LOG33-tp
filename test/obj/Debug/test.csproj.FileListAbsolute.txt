@@ -1,0 +1,7 @@
+C:\Users\Gabriel\RiderProjects\LOG330\test\bin\Debug\test.dll
+C:\Users\Gabriel\RiderProjects\LOG330\test\bin\Debug\test.pdb
+C:\Users\Gabriel\RiderProjects\LOG330\test\bin\Debug\nunit.framework.dll
+C:\Users\Gabriel\RiderProjects\LOG330\test\bin\Debug\nunit.framework.xml
+C:\Users\Gabriel\RiderProjects\LOG330\test\obj\Debug\test.csprojResolveAssemblyReference.cache
+C:\Users\Gabriel\RiderProjects\LOG330\test\obj\Debug\test.dll
+C:\Users\Gabriel\RiderProjects\LOG330\test\obj\Debug\test.pdb

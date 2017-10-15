@@ -1,0 +1,5 @@
+C:\Users\Gabriel\RiderProjects\LOG330\LOG330\bin\Debug\LOG330.exe
+C:\Users\Gabriel\RiderProjects\LOG330\LOG330\bin\Debug\LOG330.pdb
+C:\Users\Gabriel\RiderProjects\LOG330\LOG330\obj\Debug\LOG330.csprojResolveAssemblyReference.cache
+C:\Users\Gabriel\RiderProjects\LOG330\LOG330\obj\Debug\LOG330.exe
+C:\Users\Gabriel\RiderProjects\LOG330\LOG330\obj\Debug\LOG330.pdb
