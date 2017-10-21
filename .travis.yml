@@ -6,4 +6,4 @@ before_install:
 before_script:
   - nuget restore LOG330.sln
 after_script:
-  - nunit-console test/bin/Debug/test.dll
+  - nunit-console test/bin/Debug/test.dll --labels=ALL

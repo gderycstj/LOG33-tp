@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classe\Fichier.cs" />
-    <Compile Include="Classe\Math.cs" />
+    <Compile Include="Classe\Calcul.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

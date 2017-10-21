@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-//test
+
 namespace LOG330.Classe
 {
     public static class Fichier
@@ -9,7 +9,7 @@ namespace LOG330.Classe
         public static string[] Lire(string path)
         {
             List<double> listeNombre  = new List<double>();
-            String[] lignesFichier;       
+            string[] lignesFichier;       
 
             try
             {
@@ -19,7 +19,7 @@ namespace LOG330.Classe
             {
                 throw e;
             }
-
+               //test 
             return lignesFichier;
         }
     }

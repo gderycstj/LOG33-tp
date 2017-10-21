@@ -19,8 +19,7 @@ namespace LOG330
                 if(nomFichier == "Q")
                     break;
              
-                try
-                {
+                try {
                     string[] lignesFichier = Fichier.Lire(nomFichier);
                     List<double> listeX = new List<double>();
                     List<double> listeY = new List<double>();
@@ -62,8 +61,7 @@ namespace LOG330
                     Console.ReadLine();
                     valid = true;
                 }
-                catch (Exception e)
-                {
+                catch (Exception e) {
                     Console.WriteLine("Le chemin du fichier fourni est invalide. appuyer sur la touche entrée pour réassayer");
                     Console.ReadLine();
                     Console.Clear();
