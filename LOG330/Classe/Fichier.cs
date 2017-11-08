@@ -19,7 +19,6 @@ namespace LOG330.Classe
             {
                 throw e;
             }
-               //test 
             return lignesFichier;
         }
     }
