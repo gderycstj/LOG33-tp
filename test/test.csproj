@@ -42,9 +42,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConstanteRegressionTest.cs" />
     <Compile Include="CorrelationTest.cs" />
     <Compile Include="EcartTypeTest.cs" />
     <Compile Include="MoyenneTest.cs" />
+    <Compile Include="PenteRegressionTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VarianceTest.cs" />
   </ItemGroup>

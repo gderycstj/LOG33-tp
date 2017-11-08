@@ -96,9 +96,13 @@ namespace LOG330.Classe
             return (((nbNombre * sommeXY) - (sommeX * sommeY)) / (Math.Sqrt(((nbNombre * sommeXX) - (sommeX * sommeX)) * ((nbNombre * sommeYY) - (sommeY * sommeY))))); 
         }
 
-
         public static double CalculerPenteRegression(List<double> listeX, List<double> listeY, double nbNombre)
         {
+            if (listeX.Count < 3 || listeY.Count < 3 || nbNombre != listeX.Count || nbNombre != listeY.Count)
+            {
+                return 0;
+            }
+            
             List<double> listeXX = new List<double>();
             List<double> listeXY = new List<double>();
             
@@ -118,9 +122,13 @@ namespace LOG330.Classe
         
         public static  double CalculerConstanteRegression(List<double> listeX, List<double> listeY, double pente)
         {
+            if (listeX.Count < 3 || listeY.Count < 3)
+            {
+                return 0;
+            }
+            
             double sommeX = CalculerMoyenne(listeX);
             double sommeY = CalculerMoyenne(listeY);
-
 
             return sommeY - pente * sommeX;
         }

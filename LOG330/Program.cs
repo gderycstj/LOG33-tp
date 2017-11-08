@@ -52,6 +52,9 @@ namespace LOG330
                         Console.WriteLine("===============================");
                         string choix = Console.ReadLine();
                         
+                        if(choix == "3")
+                            return;
+                        
                         Console.WriteLine("Veuillez rentrer la valeur demandé: ");
                         string valeur = Console.ReadLine();
                         
@@ -73,8 +76,6 @@ namespace LOG330
                                     double valeurX = ( Convert.ToDouble(valeur) - constante)/ pente;
                                     Console.WriteLine("Valeur X = " + valeurX);
                                 break;
-                                case "3":
-                                    return;
                                 default:
                                     Console.WriteLine("La valeur doit être entre 1 et 3. Veuillez refaire votre choix");
                                     Console.ReadLine();
