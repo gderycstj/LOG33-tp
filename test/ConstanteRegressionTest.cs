@@ -74,8 +74,7 @@ namespace test
                 double penteRegression = Calcul.CalculerPenteRegression(listTestX, listTestY, 3);
             
                 Assert.AreEqual(penteRegression, 0);
-            }
-            
+            } 
 
         }
 }

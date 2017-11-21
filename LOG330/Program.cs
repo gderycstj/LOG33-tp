@@ -10,7 +10,7 @@ namespace LOG330
         {
             while (true)
             {
-                Console.WriteLine("tappez le chemin du fichier csv à lire où Q pour quitter. Enfin appuyer sur la touche entrée pour confirmer votre choix ");
+                Console.WriteLine("tappez le chemin du fichier csv à lire ou Q pour quitter. Enfin, appuyer sur la touche entrée pour confirmer votre choix ");
                 string nomFichier = Console.ReadLine();
                 Console.Clear();
                 
@@ -42,46 +42,9 @@ namespace LOG330
                         }
                     }
 
-                    while (true)
-                    {
-                        Console.Clear();
-                        Console.WriteLine("===========Menu================");
-                        Console.WriteLine("1. Entrer valeur de x et calculer le y");
-                        Console.WriteLine("2. Entrer valeur de y et calculer le x");
-                        Console.WriteLine("3. Quitter l'application");
-                        Console.WriteLine("===============================");
-                        string choix = Console.ReadLine();
-                        
-                        if(choix == "3")
-                            return;
-                        
-                        Console.WriteLine("Veuillez rentrer la valeur demandé: ");
-                        string valeur = Console.ReadLine();
-                        
-                        Console.Clear();
-
-                        double pente = Calcul.CalculerPenteRegression(listeX, listeY, nbDonnee);
-                        double constante = Calcul.CalculerConstanteRegression(listeX, listeY, pente);
-                        
-                       Console.WriteLine( "Pente: " + pente);
-                       Console.WriteLine("Constante: " + constante);
-                       Console.Clear();
-                       switch (choix)
-                        {
-                                case "1":
-                                    double valeurY = (pente * Convert.ToDouble(valeur)) + constante;
-                                    Console.WriteLine("Valeur Y = " + valeurY);
-                                break;
-                                case "2":
-                                    double valeurX = ( Convert.ToDouble(valeur) - constante)/ pente;
-                                    Console.WriteLine("Valeur X = " + valeurX);
-                                break;
-                                default:
-                                    Console.WriteLine("La valeur doit être entre 1 et 3. Veuillez refaire votre choix");
-                                    Console.ReadLine();
-                                break;
-                        }   
-                    }
+                   double correlation = Util.AnalyseVariable(listeX, listeY, nbDonnee);
+                   AfficherCorrelation(correlation);              
+                    
                 }
                 catch (Exception e) 
                 {
@@ -89,9 +52,28 @@ namespace LOG330
                     Console.ReadLine();
                     Console.Clear();
                 }
+            }         
+        }
+
+        public static void AfficherCorrelation(double correlation)
+        {
+            Console.WriteLine("Corrélation: " + correlation);
+            
+            if(correlation >= 0 && correlation <= 0.2){
+                Console.WriteLine("Corrélation Nulle à faible");
+            } else if(correlation >= 0.2 && correlation <= 0.4){
+                Console.WriteLine("Corrélation Faible à moyenne");
+            } else if (correlation >= 0.4 && correlation <= 0.7){
+                Console.WriteLine("Corrélation Moyenne à forte");
+            } else if (correlation >= 0.7 && correlation <= 0.9){
+                Console.WriteLine("Corrélation Forte à très forte");
+            } else if (correlation >= 0.9 && correlation <= 1){
+                Console.WriteLine("Corrélation Très forte à parfaite");
             }
             
+            Console.ReadLine();
         }
+        
     }
     
     
