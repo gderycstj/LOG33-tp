@@ -5,6 +5,9 @@ namespace LOG330.Classe
 {
     public static class Calcul
     {
+        
+        const int MinNombreListe = 3;
+        
         public static double CalculerMoyenne(List<double> listeNombres)
         {
             if (listeNombres.Count == 0)
@@ -71,7 +74,8 @@ namespace LOG330.Classe
 
         public static double CalculerCorrelation(List<double> listeX, List<double> listeY, double nbNombre)
         {
-            if (listeX.Count < 3 || listeY.Count < 3 || nbNombre != listeX.Count || nbNombre != listeY.Count)
+            if (listeX.Count < MinNombreListe || listeY.Count < MinNombreListe || nbNombre != listeX.Count || 
+                nbNombre != listeY.Count)
             {
                 return 0;
             }
@@ -93,12 +97,17 @@ namespace LOG330.Classe
             double sommeYY = CalculerSomme(listeYY);
             double sommeXY = CalculerSomme(listeXY);
 
-            return (((nbNombre * sommeXY) - (sommeX * sommeY)) / (Math.Sqrt(((nbNombre * sommeXX) - (sommeX * sommeX)) * ((nbNombre * sommeYY) - (sommeY * sommeY))))); 
+            return (((nbNombre * sommeXY) - (sommeX * sommeY)) / 
+            (Math.Sqrt(((nbNombre * sommeXX) - (sommeX * sommeX)) * ((nbNombre * sommeYY) - (sommeY * sommeY))))); 
+            
+            
         }
 
         public static double CalculerPenteRegression(List<double> listeX, List<double> listeY, double nbNombre)
         {
-            if (listeX.Count < 3 || listeY.Count < 3 || nbNombre != listeX.Count || nbNombre != listeY.Count)
+            if (listeX.Count < MinNombreListe || listeY.Count < MinNombreListe || nbNombre != listeX.Count || 
+                nbNombre != listeY.Count)
+                
             {
                 return 0;
             }
@@ -122,7 +131,7 @@ namespace LOG330.Classe
         
         public static  double CalculerConstanteRegression(List<double> listeX, List<double> listeY, double pente)
         {
-            if (listeX.Count < 3 || listeY.Count < 3)
+            if (listeX.Count < MinNombreListe || listeY.Count < MinNombreListe)
             {
                 return 0;
             }

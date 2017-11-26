@@ -10,7 +10,8 @@ namespace LOG330
         {
             while (true)
             {
-                Console.WriteLine("tappez le chemin du fichier csv à lire ou Q pour quitter. Enfin, appuyer sur la touche entrée pour confirmer votre choix ");
+                Console.WriteLine("tappez le chemin du fichier csv à lire ou Q pour quitter. Enfin, appuyer sur la " +
+                                  " touche entrée pour confirmer votre choix ");
                 string nomFichier = Console.ReadLine();
                 Console.Clear();
                 
@@ -46,9 +47,11 @@ namespace LOG330
                    AfficherCorrelation(correlation);              
                     
                 }
-                catch (Exception e) 
+                catch 
                 {
-                    Console.WriteLine("Le chemin du fichier fourni est invalide. appuyer sur la touche entrée pour réassayer");
+                    Console.WriteLine("Le chemin du fichier fourni est invalide. appuyer sur la touche entrée " +
+                                      "pour réassayer");                     
+                    
                     Console.ReadLine();
                     Console.Clear();
                 }
