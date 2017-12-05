@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using LOG330.Classe;
 
 namespace LOG330
@@ -8,9 +9,13 @@ namespace LOG330
     {
         public static void Main(string[] args)
         {
+            const double estimation = 900;
+            const double student90 = 1.860;
+            const double student70 = 1.108;
+            
             while (true)
             {
-                Console.WriteLine("tappez le chemin du fichier csv à lire ou Q pour quitter. Enfin, appuyer sur la " +
+                Console.Write("tappez le chemin du fichier csv à lire ou Q pour quitter. Enfin, appuyer sur la " +
                                   " touche entrée pour confirmer votre choix ");
                 string nomFichier = Console.ReadLine();
                 Console.Clear();
@@ -43,15 +48,38 @@ namespace LOG330
                         }
                     }
 
-                   double correlation = Util.AnalyseVariable(listeX, listeY, nbDonnee);
-                   AfficherCorrelation(correlation);              
+                   double ecartType =  Calcul.CalculerEcartTypeListe(listeX, listeY, nbDonnee);
+                   double intervalle70 =
+                        Calcul.CalculerIntervalleConfiance(ecartType, estimation, student70, listeX, nbDonnee);
+                   double intervalle90 = 
+                       Calcul.CalculerIntervalleConfiance(ecartType, estimation, student90, listeX, nbDonnee);
+
+                    intervalle70 = Math.Round(intervalle70, 0);
+                    intervalle90 = Math.Round(intervalle90, 0);
                     
+                    Console.WriteLine("Nb de ligne de code estimé: " + estimation);
+                    Console.WriteLine();
+                    Console.WriteLine("Intervalle 90%: " + intervalle90);
+                    Console.WriteLine();
+                    Console.WriteLine("Il y a 90% de chances que la taille du projet soit entre " 
+                                      + (estimation - intervalle90)
+                                      + " et "
+                                      + (estimation + intervalle90));
+                    Console.WriteLine();
+                    Console.WriteLine("Intervalle 70%: " + intervalle70);
+                    Console.WriteLine();
+                    Console.WriteLine("Il y a 70% de chances que la taille du projet soit entre " 
+                                      + (estimation - intervalle70)
+                                      + " et "
+                                      + (estimation + intervalle70));
+                    Console.ReadLine();
+                    Console.Clear();
+
                 }
                 catch 
                 {
                     Console.WriteLine("Le chemin du fichier fourni est invalide. appuyer sur la touche entrée " +
-                                      "pour réassayer");                     
-                    
+                                      "pour réassayer");                                      
                     Console.ReadLine();
                     Console.Clear();
                 }
@@ -78,7 +106,5 @@ namespace LOG330
         }
         
     }
-    
-    
     
 }

@@ -136,11 +136,45 @@ namespace LOG330.Classe
                 return 0;
             }
             
-            double sommeX = CalculerMoyenne(listeX);
-            double sommeY = CalculerMoyenne(listeY);
+            double moyenneX = CalculerMoyenne(listeX);
+            double moyenneY = CalculerMoyenne(listeY);
 
-            return sommeY - pente * sommeX;
+            return moyenneY - pente * moyenneX;
         }
-       
+
+        public static double CalculerEcartTypeListe(List<double> listX, List<double> listY, double nbDonnee)
+        {
+            double sommeYEcart = 0;
+            double pente = CalculerPenteRegression(listX, listY, nbDonnee);
+            double constante = CalculerConstanteRegression(listX, listY, pente);
+
+
+            for (int i = 0; i < nbDonnee; i++)
+            {
+                double yReg = 0;
+
+                yReg = pente * listX[i] + constante;
+
+                sommeYEcart += (listY[i] - yReg) * (listY[i] - yReg);
+            }
+
+            return Math.Sqrt((1 / (nbDonnee - 1)) * sommeYEcart);
+        }
+
+
+        public static double CalculerIntervalleConfiance(double ecartType, double donneeEstime, double valeurStudent,
+            List<double> listX, double nbDonnee)
+        {
+            double sommeXMoyen = 0;
+            double moyenneListX = CalculerMoyenne(listX);
+
+            for (int i = 0; i < nbDonnee; i++)
+            {
+                sommeXMoyen += (listX[i] - moyenneListX) * (listX[i] - moyenneListX);
+            }
+
+            return ecartType * valeurStudent * Math.Sqrt(1 + (1 / nbDonnee) +
+                   (((donneeEstime - moyenneListX) * (donneeEstime - moyenneListX)) / sommeXMoyen));
+        }
     }
 }

@@ -7,7 +7,7 @@ namespace LOG330.Classe
         public static double AnalyseVariable(List<double> listSommeTemps, List<double> listNote, double nbDonnee)
         {
             double pente = Calcul.CalculerPenteRegression(listSommeTemps, listNote, nbDonnee);
-            double constante = Calcul.CalculerConstanteRegression(listSommeTemps, listNote, nbDonnee);
+            double constante = Calcul.CalculerConstanteRegression(listSommeTemps, listNote, pente);
             
             List<double> listRegNote = new List<double>();
 
@@ -15,7 +15,6 @@ namespace LOG330.Classe
             {
                 listRegNote.Add(pente * listNote[i] + constante);
             }
-
 
             double corelation = Calcul.CalculerCorrelation(listSommeTemps, listRegNote, nbDonnee);
             
