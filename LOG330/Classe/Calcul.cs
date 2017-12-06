@@ -5,8 +5,7 @@ namespace LOG330.Classe
 {
     public static class Calcul
     {
-        
-        const int MinNombreListe = 3;
+        const int minNombreListe = 3;
         
         public static double CalculerMoyenne(List<double> listeNombres)
         {
@@ -74,7 +73,7 @@ namespace LOG330.Classe
 
         public static double CalculerCorrelation(List<double> listeX, List<double> listeY, double nbNombre)
         {
-            if (listeX.Count < MinNombreListe || listeY.Count < MinNombreListe || nbNombre != listeX.Count || 
+            if (listeX.Count < minNombreListe || listeY.Count < minNombreListe || nbNombre != listeX.Count || 
                 nbNombre != listeY.Count)
             {
                 return 0;
@@ -99,13 +98,11 @@ namespace LOG330.Classe
 
             return (((nbNombre * sommeXY) - (sommeX * sommeY)) / 
             (Math.Sqrt(((nbNombre * sommeXX) - (sommeX * sommeX)) * ((nbNombre * sommeYY) - (sommeY * sommeY))))); 
-            
-            
         }
 
         public static double CalculerPenteRegression(List<double> listeX, List<double> listeY, double nbNombre)
         {
-            if (listeX.Count < MinNombreListe || listeY.Count < MinNombreListe || nbNombre != listeX.Count || 
+            if (listeX.Count < minNombreListe || listeY.Count < minNombreListe || nbNombre != listeX.Count || 
                 nbNombre != listeY.Count)
                 
             {
@@ -131,7 +128,7 @@ namespace LOG330.Classe
         
         public static  double CalculerConstanteRegression(List<double> listeX, List<double> listeY, double pente)
         {
-            if (listeX.Count < MinNombreListe || listeY.Count < MinNombreListe)
+            if (listeX.Count < minNombreListe || listeY.Count < minNombreListe)
             {
                 return 0;
             }

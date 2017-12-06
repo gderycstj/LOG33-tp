@@ -15,10 +15,8 @@ namespace LOG330.Classe
             {
                 listRegNote.Add(pente * listNote[i] + constante);
             }
-
-            double corelation = Calcul.CalculerCorrelation(listSommeTemps, listRegNote, nbDonnee);
             
-            return corelation;
+            return Calcul.CalculerCorrelation(listSommeTemps, listRegNote, nbDonnee);;
         }
     }
 }

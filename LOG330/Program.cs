@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using LOG330.Classe;
 
 namespace LOG330
@@ -41,7 +40,9 @@ namespace LOG330
                         if(i == 0)
                         {
                             nbDonnee = Convert.ToDouble(valeur[0]);
-                        } else
+                        } 
+                        
+                        else
                         {
                             listeX.Add(Convert.ToDouble(valeur[0]));
                             listeY.Add(Convert.ToDouble(valeur[1]));
@@ -74,7 +75,6 @@ namespace LOG330
                                       + (estimation + intervalle70));
                     Console.ReadLine();
                     Console.Clear();
-
                 }
                 catch 
                 {
@@ -90,21 +90,27 @@ namespace LOG330
         {
             Console.WriteLine("Corrélation: " + correlation);
             
-            if(correlation >= 0 && correlation <= 0.2){
+            if(correlation >= 0 && correlation <= 0.2)
+            {
                 Console.WriteLine("Corrélation Nulle à faible");
-            } else if(correlation >= 0.2 && correlation <= 0.4){
+            } 
+            else if(correlation >= 0.2 && correlation <= 0.4)
+            {
                 Console.WriteLine("Corrélation Faible à moyenne");
-            } else if (correlation >= 0.4 && correlation <= 0.7){
+            } 
+            else if (correlation >= 0.4 && correlation <= 0.7)
+            {
                 Console.WriteLine("Corrélation Moyenne à forte");
-            } else if (correlation >= 0.7 && correlation <= 0.9){
+            } 
+            else if (correlation >= 0.7 && correlation <= 0.9)
+            {
                 Console.WriteLine("Corrélation Forte à très forte");
-            } else if (correlation >= 0.9 && correlation <= 1){
+            } 
+            else if (correlation >= 0.9 && correlation <= 1)
+            {
                 Console.WriteLine("Corrélation Très forte à parfaite");
             }
-            
             Console.ReadLine();
-        }
-        
+        } 
     }
-    
 }
